@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Study Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI Study Assistant</h1>
+
+        <p>Ask a question and the AI will generate a study-focused answer.</p>
+
+        <form method="POST">
+
+            <textarea
+                name="prompt"
+                placeholder="Example: Explain Kubernetes in simple words..."
+                required
+            ></textarea>
+
+            <br>
+
+            <button type="submit">Generate Answer</button>
+
+        </form>
+
+        {% if response %}
+
+        <div class="response">
+            <h2>AI Response:</h2>
+            <p>{{ response }}</p>
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
